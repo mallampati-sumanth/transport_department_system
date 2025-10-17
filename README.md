@@ -38,7 +38,16 @@ transport_department_system/
 └── README.md
 ```
 
-## Installation
+## Quick Start
+
+### Automated Setup
+```bash
+git clone https://github.com/mallampati-sumanth/transport_department_system.git
+cd transport_department_system
+./setup.sh
+```
+
+### Manual Setup
 
 1. Clone the repository:
 ```bash
@@ -56,6 +65,13 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+
+4. Initialize database:
+```bash
+python -c "from app import create_app; from models import db; app = create_app(); app.app_context().push(); db.create_all()"
+```
+
+For detailed setup instructions, see [Quick Start Guide](docs/QUICK_START.md).
 
 ## Running the Application
 
@@ -79,13 +95,18 @@ pytest tests/
 - `GET /api/routes` - List all routes
 - `GET /api/licenses` - List all licenses
 
-## Scrum Documentation
+## Documentation
 
+### Getting Started
+- **[Quick Start Guide](docs/QUICK_START.md)** - Get up and running in 5 minutes
+- **[Development Guide](docs/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
+- **[API Documentation](docs/API_DOCUMENTATION.md)** - Complete API reference
+
+### Scrum Methodology
 The project follows Scrum methodology with the following artifacts:
-
-- **Product Backlog**: See [docs/PRODUCT_BACKLOG.md](docs/PRODUCT_BACKLOG.md)
-- **Sprint Planning**: See [docs/SPRINT_PLANNING.md](docs/SPRINT_PLANNING.md)
-- **Team Roles**: See [docs/SCRUM_TEAM.md](docs/SCRUM_TEAM.md)
+- **[Product Backlog](docs/PRODUCT_BACKLOG.md)** - User stories and epics
+- **[Sprint Planning](docs/SPRINT_PLANNING.md)** - Sprint goals and tasks
+- **[Team Roles](docs/SCRUM_TEAM.md)** - Roles and responsibilities
 
 ## Development Workflow
 
@@ -103,6 +124,36 @@ The project follows Scrum methodology with the following artifacts:
 4. Submit pull request for code review
 5. Merge after approval
 
+## Verification
+
+To verify that the system is set up correctly:
+```bash
+python verify_setup.py
+```
+
+This will check that all required files are present and have valid syntax.
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Review the [Development Guide](docs/DEVELOPMENT_GUIDE.md)
+2. Check the [Product Backlog](docs/PRODUCT_BACKLOG.md) for available tasks
+3. Create a feature branch
+4. Make your changes with tests
+5. Submit a pull request
+
+See our Definition of Done in the [Product Backlog](docs/PRODUCT_BACKLOG.md).
+
 ## License
 
 This project is developed for educational purposes as part of a Scrum-based software development initiative.
+
+## Acknowledgments
+
+This Transport Department System demonstrates:
+- Clean Python architecture with Flask
+- Database design with SQLAlchemy
+- RESTful API design
+- Scrum agile methodology
+- Test-driven development with pytest
