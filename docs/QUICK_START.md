@@ -4,6 +4,7 @@
 
 ### Step 1: Clone the Repository
 ```bash
+# Replace with your repository URL if forked
 git clone https://github.com/mallampati-sumanth/transport_department_system.git
 cd transport_department_system
 ```
@@ -136,8 +137,11 @@ pytest tests/test_models.py
 
 ### Database Operations
 ```bash
+# Initialize database
+python init_db.py
+
 # Reset database (WARNING: deletes all data)
-python -c "from app import create_app; from models import db; app = create_app(); app.app_context().push(); db.drop_all(); db.create_all()"
+python init_db.py  # Creates fresh tables
 
 # Load sample data
 python sample_data.py

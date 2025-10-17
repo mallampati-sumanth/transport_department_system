@@ -17,7 +17,7 @@ def check_file(filepath):
     # Check syntax for Python files
     if filepath.endswith('.py'):
         try:
-            with open(filepath, 'r') as f:
+            with open(filepath, 'r', encoding='utf-8') as f:
                 ast.parse(f.read())
             print(f"✅ Valid: {filepath}")
         except SyntaxError as e:
@@ -42,6 +42,7 @@ def main():
         'config.py',
         'requirements.txt',
         'sample_data.py',
+        'init_db.py',
         'setup.sh',
         'verify_setup.py',
         'README.md',

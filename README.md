@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 4. Initialize database:
 ```bash
-python -c "from app import create_app; from models import db; app = create_app(); app.app_context().push(); db.create_all()"
+python init_db.py
 ```
 
 For detailed setup instructions, see [Quick Start Guide](docs/QUICK_START.md).

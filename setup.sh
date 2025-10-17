@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 # Create database tables
 echo "Creating database tables..."
-python -c "from app import create_app; from models import db; app = create_app('development'); app.app_context().push(); db.create_all(); print('Database tables created successfully!')"
+python init_db.py
 
 # Optional: Load sample data
 read -p "Do you want to load sample data? (y/n) " -n 1 -r
